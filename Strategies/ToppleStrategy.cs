@@ -6,7 +6,7 @@ namespace Assi1.Strategies
     {
         public float EvaluateStack(HeavyObjectList list)
         {
-            float toppleScore = 0.0f;
+            int stabilityScore = 0;
 
             for (int i = 1; i < list.Count; i++)
             {
@@ -21,13 +21,20 @@ namespace Assi1.Strategies
 
                 if (currentMass > belowMass && currentBaseArea < belowBaseArea)
                 {
-                    float massDifference = currentMass - belowMass;
-                    float areaDifference = belowBaseArea - currentBaseArea;
-                    toppleScore += massDifference * areaDifference;
+                    stabilityScore--;
+                }
+                else if (currentMass < belowMass && currentBaseArea > belowBaseArea)
+                {
+                    stabilityScore++;
                 }
             }
 
-            return -toppleScore;
+            if (stabilityScore > 0)
+                return 2;
+            else if (stabilityScore < 0)
+                return -2;
+            else
+                return 0;
         }
     }
 }
