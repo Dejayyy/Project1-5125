@@ -25,12 +25,8 @@ namespace Assi1.Strategies
                     stabilityScore++;
             }
 
-            if (stabilityScore > 0)
-                return 2;
-            else if (stabilityScore < 0)
-                return -2;
-            else
-                return 0;
+            return stabilityScore;
+
         }
     }
 }

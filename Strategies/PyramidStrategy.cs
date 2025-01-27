@@ -19,16 +19,10 @@ namespace Assi1.Strategies
                 if (currentBaseArea < belowBaseArea)               
                     pyramidScore++;
                 else if (currentBaseArea > belowBaseArea)
-                    pyramidScore--;
-                
+                    pyramidScore--;               
             }
 
-            if (pyramidScore > 0)
-                return 2;
-            else if (pyramidScore < 0)
-                return -2;
-            else
-                return 0;
+            return pyramidScore;
         }
     }
 }
