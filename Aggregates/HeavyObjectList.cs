@@ -11,11 +11,13 @@ namespace Assi1.Aggregates
             return new HeavyObjectIterator(this);
         }
 
+        //Adds the heavy objects to the list
         public void Add(HeavyObject heavyObject)
         {
             _list.Add(heavyObject);
         }
 
+        //Prints the heavy object list
         public void Print()
         {
             foreach (HeavyObject heavyObject in _list)
@@ -29,6 +31,7 @@ namespace Assi1.Aggregates
             return _list[position];
         }
 
+        //Prints the count of the list
         public int Length()
         {
             return _list.Count;

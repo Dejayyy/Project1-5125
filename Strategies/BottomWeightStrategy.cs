@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assi1.Strategies
 {
-    public class BottomWeightStrategy : iStackingStrategy
+    public class BottomWeightStrategy : IStackingStrategy
     {
         public float EvaluateStack(HeavyObjectList stack)
         {

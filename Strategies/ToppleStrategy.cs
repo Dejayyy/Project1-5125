@@ -3,7 +3,7 @@ using Assi1.Aggregates;
 
 namespace Assi1.Strategies
 {
-    public class ToppleStrategy : iStackingStrategy
+    public class ToppleStrategy : IStackingStrategy
     {
         public float EvaluateStack(HeavyObjectList list)
         {
