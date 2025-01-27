@@ -2,7 +2,7 @@ using System;
 
 namespace Assi1
 {
-    class HeavyObject
+    public class HeavyObject
     {
         public HeavyObject(float width = 1000f, float length = 1000f, float height = 1000f, float density = 1f) {
             Width = width;
