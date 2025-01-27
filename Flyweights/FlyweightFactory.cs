@@ -26,11 +26,9 @@ namespace Assi1.Flyweights
                     case "pyramid":
                         _flyweights[strategyName] = new PyramidStrategy();
                         break;
-                    /*
                 case "bottomweight":
                     _flyweights[strategyName] = new BottomWeightStrategy();
                     break;
-                    */
                     default:
                         throw new ArgumentException($"Strategy '{strategyName}' is not recognized.");
                 }

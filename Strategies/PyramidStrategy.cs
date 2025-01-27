@@ -1,4 +1,5 @@
-﻿using Assi1.Aggregates;
+﻿using System;
+using Assi1.Aggregates;
 
 namespace Assi1.Strategies
 {

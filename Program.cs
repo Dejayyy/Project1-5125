@@ -44,19 +44,17 @@ namespace Assi1
 
             // Create our Flyweight Factory and create the Flyweights out of it
             FlyweightFactory fw = new FlyweightFactory();
-            /*
+
             iStackingStrategy bottomWeight = fw.GetFlyweight("bottomWeight");
-            */
             iStackingStrategy pyramid = fw.GetFlyweight("pyramid");          
             iStackingStrategy topple = fw.GetFlyweight("topple");
 
 
-            /*
             // Print results
             Console.WriteLine("BottomWeight - ListA: " + bottomWeight.EvaluateStack(listA));
             Console.WriteLine("BottomWeight - ListB: " + bottomWeight.EvaluateStack(listB));
             Console.WriteLine("BottomWeight - ListC: " + bottomWeight.EvaluateStack(listC));
-            */
+
             Console.WriteLine("Pyramid - ListA: " + pyramid.EvaluateStack(listA));
             Console.WriteLine("Pyramid - ListB: " + pyramid.EvaluateStack(listB));
             Console.WriteLine("Pyramid - ListC: " + pyramid.EvaluateStack(listC));
