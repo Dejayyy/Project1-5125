@@ -1,10 +1,24 @@
-﻿using System;
+﻿using Assi1.Aggregates;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Assi1.Strategies
 {
-    internal class BottomWeightStrategy
+    public class BottomWeightStrategy : iStackingStrategy
     {
+        public float EvaluateStack(HeavyObjectList stack)
+        {
+            float score = 0;
+
+            for (int i = 0; i < stack.Count; i++)
+            {
+                score += stack.Get(i).Mass / (i + 1);
+            }
+
+            return score;
+        }
     }
 }
