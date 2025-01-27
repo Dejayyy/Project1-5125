@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Assi1.Strategies
 {
-    public interface StackingStrategy
+    public interface iStackingStrategy
     {
         float EvaluateStack(Aggregates.HeavyObjectList list);
     }

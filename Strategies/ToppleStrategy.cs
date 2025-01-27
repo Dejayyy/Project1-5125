@@ -2,7 +2,7 @@
 
 namespace Assi1.Strategies
 {
-    public class ToppleStrategy : StackingStrategy
+    public class ToppleStrategy : iStackingStrategy
     {
         public float EvaluateStack(HeavyObjectList list)
         {
@@ -20,13 +20,9 @@ namespace Assi1.Strategies
                 float belowBaseArea = below.Width * below.Length;
 
                 if (currentMass > belowMass && currentBaseArea < belowBaseArea)
-                {
                     stabilityScore--;
-                }
                 else if (currentMass < belowMass && currentBaseArea > belowBaseArea)
-                {
                     stabilityScore++;
-                }
             }
 
             if (stabilityScore > 0)

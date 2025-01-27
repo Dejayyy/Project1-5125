@@ -6,14 +6,14 @@ namespace Assi1.Flyweights
 {
     public class FlyweightFactory
     {
-        private readonly Dictionary<string, StackingStrategy> _flyweights;
+        private readonly Dictionary<string, iStackingStrategy> _flyweights;
 
         public FlyweightFactory()
         {
-            _flyweights = new Dictionary<string, StackingStrategy>();
+            _flyweights = new Dictionary<string, iStackingStrategy>();
         }
 
-        public StackingStrategy GetFlyweight(string strategyName)
+        public iStackingStrategy GetFlyweight(string strategyName)
         {
             if (!_flyweights.ContainsKey(strategyName))
             {
@@ -22,14 +22,15 @@ namespace Assi1.Flyweights
                     case "topple":
                         _flyweights[strategyName] = new ToppleStrategy();
                         break;
-                        /*
+                        
                     case "pyramid":
                         _flyweights[strategyName] = new PyramidStrategy();
                         break;
-                    case "bottomweight":
-                        _flyweights[strategyName] = new BottomWeightStrategy();
-                        break;
-                        */
+                    /*
+                case "bottomweight":
+                    _flyweights[strategyName] = new BottomWeightStrategy();
+                    break;
+                    */
                     default:
                         throw new ArgumentException($"Strategy '{strategyName}' is not recognized.");
                 }
