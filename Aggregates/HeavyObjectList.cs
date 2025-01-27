@@ -2,10 +2,13 @@
 
 namespace Assi1.Aggregates
 {
+    //Heavy Obj
     public class HeavyObjectList : IAggregate<HeavyObject>
     {
+        //List to hold HeavyObjects
         private List<HeavyObject> _list = new List<HeavyObject>();
 
+        //Creates the Iterator
         public IIterator<HeavyObject> CreateIterator()
         {
             return new HeavyObjectIterator(this);
@@ -26,12 +29,13 @@ namespace Assi1.Aggregates
             }
         }
 
+        //Gets HeavyObject AT given index
         public HeavyObject At(int position)
         {
             return _list[position];
         }
 
-        //Prints the count of the list
+        //Returns the count of the list
         public int Length()
         {
             return _list.Count;
