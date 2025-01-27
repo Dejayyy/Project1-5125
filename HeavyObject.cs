@@ -17,13 +17,13 @@ namespace Assi1
 
         public float Density;
         
-        // Volume = Width * Height * Length
+        //Volume = Width * Height * Length
         public float Volume {
             get { return Width * Height * Length; }
             set { }
         }
 
-        // Mass = Volume * Density
+        //Mass = Volume * Density
         public float Mass {
             get { return Volume * Density; }
             set { }

@@ -1,39 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Assi1.Aggregates
 {
     public class HeavyObjectIterator : IIterator<HeavyObject>
     {
-        protected HeavyObjectAggregate<HeavyObject> agg;
-        protected int index;
+        private protected HeavyObjectList _aggregate;
+        private int _current;
 
-        public HeavyObjectIterator(HeavyObjectAggregate<HeavyObject> aggregate)
+        public HeavyObjectIterator(HeavyObjectList aggregate)
         {
-            this.agg = aggregate;
-            index = 0;
+            _aggregate = aggregate;
+            _current = 0;
         }
-           
 
-        public bool IsDone()
+        public HeavyObject First()
         {
-            return index >= agg.Length();
+            _current = 0;
+            return _aggregate.At(_current);
         }
 
         public void Next()
         {
-            ++index;
+            if (!IsDone()) _current++;
         }
 
-        HeavyObject IIterator<HeavyObject>.CurrentItem()
+        public bool IsDone()
         {
-            return agg.At(index);
+            return _current >= _aggregate.Length();
         }
 
-        HeavyObject IIterator<HeavyObject>.First()
+        public HeavyObject CurrentItem()
         {
-            return agg.At(0);
+            return _aggregate.At(_current);
         }
     }
 }

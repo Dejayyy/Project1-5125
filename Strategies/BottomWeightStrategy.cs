@@ -13,9 +13,9 @@ namespace Assi1.Strategies
         {
             float score = 0;
 
-            for (int i = 0; i < stack.Count; i++)
+            for (int i = 0; i < stack.Length(); i++)
             {
-                score += stack.Get(i).Mass / (i + 1);
+                score += stack.At(i).Mass / (i + 1);
             }
 
             return score;

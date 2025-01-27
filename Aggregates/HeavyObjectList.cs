@@ -1,43 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Assi1.Aggregates
 {
-    public class HeavyObjectList
+    public class HeavyObjectList : IAggregate<HeavyObject>
     {
-        private List<HeavyObject> heavyList;
+        private List<HeavyObject> _list = new List<HeavyObject>();
 
-        public HeavyObjectList()
+        public IIterator<HeavyObject> CreateIterator()
         {
-            heavyList = new List<HeavyObject>();
+            return new HeavyObjectIterator(this);
         }
 
-        public void Add(HeavyObject Obj)
+        public void Add(HeavyObject heavyObject)
         {
-            heavyList.Add(Obj);
+            _list.Add(heavyObject);
         }
 
         public void Print()
         {
-            foreach (HeavyObject heavyObject in heavyList)
+            foreach (HeavyObject heavyObject in _list)
             {
                 heavyObject.Print();
             }
         }
 
-        public HeavyObject Get(int index)
+        public HeavyObject At(int position)
         {
-            if (index >= 0 && index < heavyList.Count)
-            {
-                return heavyList[index];
-            }
-            throw new IndexOutOfRangeException("Index is out of range.");
+            return _list[position];
         }
 
-        public int Count
+        public int Length()
         {
-            get { return heavyList.Count; }
+            return _list.Count;
         }
     }
 }

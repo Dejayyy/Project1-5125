@@ -9,10 +9,10 @@ namespace Assi1.Strategies
         {
             int pyramidScore = 0;
 
-            for (int i = 1; i < list.Count; i++)
+            for (int i = 1; i < list.Length(); i++)
             {
-                HeavyObject current = list.Get(i);
-                HeavyObject below = list.Get(i - 1);
+                HeavyObject current = list.At(i);
+                HeavyObject below = list.At(i - 1);
 
                 float currentBaseArea = current.Width * current.Length;
                 float belowBaseArea = below.Width * below.Length;
