@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Assi1.Aggregates;
+﻿using Assi1.Aggregates;
 
 namespace Assi1.Strategies
 {
-    class ToppleStrategy : StackingStrategy
+    public class ToppleStrategy : StackingStrategy
     {
-        public override float EvaluateStack(HeavyObjectList list)
+        public float EvaluateStack(HeavyObjectList list)
         {
             float toppleScore = 0.0f;
 
@@ -29,6 +26,7 @@ namespace Assi1.Strategies
                     toppleScore += massDifference * areaDifference;
                 }
             }
+
             return -toppleScore;
         }
     }
