@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Flyweights\" />
     <Folder Include="Strategies\" />
   </ItemGroup>
 
