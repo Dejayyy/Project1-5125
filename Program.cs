@@ -1,4 +1,7 @@
 ﻿using System;
+using Assi1.Aggregates;
+using Assi1.Strategies;
+using Assi1.Flyweights;
 
 namespace Assi1
 {
@@ -13,7 +16,7 @@ namespace Assi1
             HeavyObject medium = new HeavyObject(7, 7, 2, 5);
             HeavyObject heavyAndSmall = new HeavyObject(5, 5, 5, 50);
 
-            /*
+            
             // Create lists of the HeavyObjects and print them for debug purposes
             HeavyObjectList listA = new HeavyObjectList();
             listA.Add(heavyAndSmall);
@@ -38,15 +41,15 @@ namespace Assi1
             Console.WriteLine("ListC:");
             listC.Print();
             Console.WriteLine();
-            */
-            
-            /*
+
             // Create our Flyweight Factory and create the Flyweights out of it
             FlyweightFactory fw = new FlyweightFactory();
+            /*
             StackingStrategy bottomWeight = fw.GetFlyweight("bottomWeight");
             StackingStrategy pyramid = fw.GetFlyweight("pyramid");
-            StackingStrategy topple = fw.GetFlyweight("topple");
             */
+            StackingStrategy topple = fw.GetFlyweight("topple");
+            
 
             /*
             // Print results
@@ -57,11 +60,11 @@ namespace Assi1
             Console.WriteLine("Pyramid - ListA: " + pyramid.EvaluateStack(listA));
             Console.WriteLine("Pyramid - ListB: " + pyramid.EvaluateStack(listB));
             Console.WriteLine("Pyramid - ListC: " + pyramid.EvaluateStack(listC));
-
+            */
             Console.WriteLine("Topple - ListA: " + topple.EvaluateStack(listA));
             Console.WriteLine("Topple - ListB: " + topple.EvaluateStack(listB));
             Console.WriteLine("Topple - ListC: " + topple.EvaluateStack(listC));
-            */
+            
         }
     }
 }

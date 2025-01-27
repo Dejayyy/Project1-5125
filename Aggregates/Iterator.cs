@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Assi1.Aggregates
 {
-    public class File
+    internal class Iterator
     {
     }
 }
