@@ -5,14 +5,20 @@ namespace Assi1.Strategies
 {
     public class ToppleStrategy : IStackingStrategy
     {
+        // EvaluateStack takes in a HeavyObjectList (concrete aggregate) and outputs the score as a floating point value
         public float EvaluateStack(HeavyObjectList list)
         {
-            int stabilityScore = 0;
+            float score = 0;
 
-            for (int i = 1; i < list.Length(); i++)
+            // create the iterator
+            IIterator<HeavyObject> iterator = list.CreateIterator();
+            iterator.First();
+            HeavyObject below = iterator.CurrentItem();
+
+            // loop using iterator
+            for ( iterator.Next(); !iterator.IsDone(); iterator.Next() )
             {
-                HeavyObject current = list.At(i);
-                HeavyObject below = list.At(i - 1);
+                HeavyObject current = iterator.CurrentItem();
 
                 float currentMass = current.Mass;
                 float belowMass = below.Mass;
@@ -21,12 +27,15 @@ namespace Assi1.Strategies
                 float belowBaseArea = below.Width * below.Length;
 
                 if (currentMass > belowMass && currentBaseArea < belowBaseArea)
-                    stabilityScore--;
+                    score--;
                 else if (currentMass < belowMass && currentBaseArea > belowBaseArea)
-                    stabilityScore++;
+                    score++;
+
+                // move up
+                below = current;
             }
 
-            return stabilityScore;
+            return score;
 
         }
     }

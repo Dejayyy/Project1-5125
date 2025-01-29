@@ -5,7 +5,7 @@ namespace Assi1.Aggregates
     public class HeavyObjectIterator : IIterator<HeavyObject>
     {
         //Private members
-        private protected HeavyObjectList _aggregate;
+        private HeavyObjectList _aggregate;
         private int _current;
 
         //Constructor
