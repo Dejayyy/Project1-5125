@@ -42,7 +42,7 @@ namespace Assi1
             listC.Print();
             Console.WriteLine();
 
-            // Create our Flyweight Factory and create the Flyweights out of it
+            //Create our Flyweight Factory and create the Flyweights out of it
             FlyweightFactory fw = new FlyweightFactory();
 
             IStackingStrategy bottomWeight = fw.GetFlyweight("bottomWeight");
@@ -50,7 +50,7 @@ namespace Assi1
             IStackingStrategy topple = fw.GetFlyweight("topple");
 
 
-            // Print results
+            //Print results
             Console.WriteLine("BottomWeight - ListA: " + bottomWeight.EvaluateStack(listA));
             Console.WriteLine("BottomWeight - ListB: " + bottomWeight.EvaluateStack(listB));
             Console.WriteLine("BottomWeight - ListC: " + bottomWeight.EvaluateStack(listC));

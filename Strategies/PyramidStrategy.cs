@@ -5,17 +5,17 @@ namespace Assi1.Strategies
 {
     public class PyramidStrategy : IStackingStrategy
     {
-        // EvaluateStack takes in a HeavyObjectList (concrete aggregate) and outputs the score as a floating point value
+        //EvaluateStack takes in a HeavyObjectList (concrete aggregate) and outputs the score as a floating point value
         public float EvaluateStack(HeavyObjectList list)
         {
             float score = 0;
 
-            // create the iterator
+            //create the iterator
             IIterator<HeavyObject> iterator = list.CreateIterator();
             iterator.First();
             HeavyObject below = iterator.CurrentItem();
 
-            // loop using iterator
+            //loop using iterator
             for ( iterator.Next(); !iterator.IsDone(); iterator.Next() )
             {
                 HeavyObject current = iterator.CurrentItem();
@@ -28,7 +28,7 @@ namespace Assi1.Strategies
                 else if (currentBaseArea > belowBaseArea)
                     score--;
 
-                // move up
+                //move up
                 below = current;
             }
 
