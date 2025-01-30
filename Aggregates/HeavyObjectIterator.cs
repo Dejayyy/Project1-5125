@@ -18,14 +18,13 @@ namespace Assi1.Aggregates
         //Gets first item in the list
         public HeavyObject First()
         {
-            _current = 0;
-            return _aggregate.At(_current);
+            return _aggregate.At(0);
         }
 
         //Goes to the next item
         public void Next()
         {
-            if (!IsDone()) _current++;
+             ++_current;
         }
 
         //Returns true if done
